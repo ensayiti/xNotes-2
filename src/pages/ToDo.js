@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Paper } from '@mui/material';
+import { Box, Paper, } from '@mui/material';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { todoBoxStyle, taskBoxStyle } from '../theme/customStyles';
 import { AddTask, Header, TaskList, WelcomeScreen } from '../components';
@@ -14,8 +14,9 @@ const ToDo = () => {
 
     // Adding a new task |or| Updating an existing task
     const addTask = (task) => {
+        const newTask = { ...task, time: new Date().toISOString() };
         !isEditing ? (
-            setTasks(prevState => [...prevState, task])
+            setTasks(prevState => [...prevState, newTask])
         ) : (
             setTasks(prevState => [...prevState.map(item => {
                 if (item.id === editedItemId) {
@@ -57,7 +58,6 @@ const ToDo = () => {
         setEditedItemId(taskItem.id);
     };
 
-
     return (
         <Box sx={todoBoxStyle}>
             <Header />
@@ -77,6 +77,7 @@ const ToDo = () => {
                             deleteTask={deleteTask}
                             checkTask={checkTask}
                             editTask={editTask}
+                            
                         />
                     ) : (
                         <WelcomeScreen />
@@ -86,5 +87,7 @@ const ToDo = () => {
         </Box>
     );
 };
+
+
 
 export default ToDo;

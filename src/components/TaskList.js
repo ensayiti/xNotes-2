@@ -3,7 +3,7 @@ import { Stack } from '@mui/material';
 import TaskItem from './TaskItem';
 
 
-const TaskList = ({ tasks, deleteTask, checkTask, editTask }) => {
+const TaskList = ({ tasks, deleteTask, checkTask, editTask, time }) => {
 
     return (
         <Stack spacing={{ xs: 1.5, sm: 2 }}>
@@ -16,6 +16,7 @@ const TaskList = ({ tasks, deleteTask, checkTask, editTask }) => {
                         deleteTask={deleteTask}
                         checkTask={checkTask}
                         editTask={editTask}
+                        time={taskItem.time}
                     />
                 ))
             }
