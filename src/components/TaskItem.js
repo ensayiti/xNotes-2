@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Stack, Typography, IconButton, Tooltip, Checkbox } from '@mui/material';
-import { Edit, Delete } from '@mui/icons-material';
+import { Stack, Typography, IconButton, } from '@mui/material';
+import { Tooltip } from 'antd';
+// import { Edit, Delete } from '@mui/icons-material';
+import { Checkbox } from 'antd';
+import { EditOutlined as Edit, DeleteOutlined as Delete } from '@ant-design/icons';
 import { checkedItemStyle, taskItemStyle } from '../theme/customStyles';
 
 const TaskItem = ({ taskItem, deleteTask, checkTask, editTask }) => {

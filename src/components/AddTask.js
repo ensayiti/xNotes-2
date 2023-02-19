@@ -1,7 +1,10 @@
 import React from 'react';
-import { Box, TextField, IconButton, InputAdornment, Tooltip } from '@mui/material';
-import { Add as AddIcon, AddTask as AddTaskIcon } from '@mui/icons-material';
+import { Box, TextField, IconButton, InputAdornment, } from '@mui/material';
+// import { Add as AddIcon, AddTask as AddTaskIcon } from '@mui/icons-material';
 import { textFieldStyle } from '../theme/customStyles';
+
+import { Tooltip } from 'antd';
+import { EditOutlined as AddTaskIcon, PlusCircleOutlined as AddIcon } from '@ant-design/icons';
 
 const AddTask = ({ inputValue, setInputValue, addTask, isEditing }) => {
 
